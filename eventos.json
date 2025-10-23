@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nomeEvento": "Aniversário",
+        "data": "2025-08-10"
+    },
+    {
+        "id": 2,
+        "nomeEvento": "Festa na Piscina",
+        "data": "2025-09-23"
+    },
+    {
+        "id": 3,
+        "nomeEvento": "Batalha de Beyblade",
+        "data": "2025-11-27"
+    },
+    {
+        "id": 4,
+        "nomeEvento": "Jantar em Familia",
+        "data": "2025-12-05"
+    },
+    {
+        "id": 5,
+        "nomeEvento": "Campeonato de CS",
+        "data": "2026-03-12"
+    }
+]

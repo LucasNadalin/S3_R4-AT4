@@ -1,25 +1,24 @@
 const express = require("express");
 const app = express();
-const PORT = 8084;
+const PORT = 8085;
 const fs = require("fs");
 
-app.get("/usuarios", (req, res) => {
+app.get("/eventos", (req, res) => {
     try {
-        const data = fs.readFileSync("./usuarios.json", "utf-8");;
+        const dados = fs.readFileSync("./eventos.json", "utf-8");;
 
-        let usuarios = JSON.parse(data);
+        let eventos = JSON.parse(dados);
 
-        const {nome} = req.query;
+        const {data} = req.query;
 
-         if (nome) {
-            usuarios = usuarios.filter(usuario => usuario.nome.toLowerCase()
-                .includes(nome.toLowerCase()));
+         if (data) {
+            eventos = eventos.filter(evento => evento.data == data);
         };
 
-        res.status(200).json(usuarios);
+        res.status(200).json(eventos);
     } catch (error) {
         console.error("Erro ao ler o arquivo JSON", error);
-        res.status(500).json({ erro: "Erro interno do servidor ao processar a lista de usuarios!" });
+        res.status(500).json({ erro: "Erro interno do servidor ao processar a lista de eventos!" });
     }
 });
 
