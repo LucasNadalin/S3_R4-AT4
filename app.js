@@ -5,14 +5,14 @@ const fs = require("fs");
 
 app.get("/eventos", (req, res) => {
     try {
-        const dados = fs.readFileSync("./eventos.json", "utf-8");;
+        const data = fs.readFileSync("./eventos.json", "utf-8");;
 
-        let eventos = JSON.parse(dados);
+        let eventos = JSON.parse(data);
 
-        const {data} = req.query;
+        const {dataEvento} = req.query;
 
-         if (data) {
-            eventos = eventos.filter(evento => evento.data == data);
+         if (dataEvento) {
+            eventos = eventos.filter(evento => evento.data == dataEvento);
         };
 
         res.status(200).json(eventos);
