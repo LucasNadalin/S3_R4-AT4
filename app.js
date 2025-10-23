@@ -9,6 +9,13 @@ app.get("/usuarios", (req, res) => {
 
         let usuarios = JSON.parse(data);
 
+        const {nome} = req.query;
+
+         if (nome) {
+            usuarios = usuarios.filter(usuario => usuario.nome.toLowerCase()
+                .includes(nome.toLowerCase()));
+        };
+
         res.status(200).json(usuarios);
     } catch (error) {
         console.error("Erro ao ler o arquivo JSON", error);
